@@ -4,7 +4,7 @@ import { NgxValidationHandlingMaintainService } from '../../services/ngx-validat
   selector: 'ngx-validation-handling',
   template: `
     <ng-container *ngIf="controlName">
-      <label [ngStyle]="style"  *ngIf="errorMessage !== ''" class="error-message">{{ errorMessage }}</label>
+      <label [ngStyle]="style"  *ngIf="errorMessage !== ''" class="error-message">{{ fieldName?fieldName+' '+errorMessage: errorMessage }}</label>
     </ng-container>
   `,
   styles: [
@@ -17,8 +17,9 @@ import { NgxValidationHandlingMaintainService } from '../../services/ngx-validat
   ],
 })
 export class NgxValidationHandlingComponent {
-  @Input() controlName!: string;
-  @Input() style!: any;
+  @Input({required:true}) controlName!: string;
+  @Input() fieldName: string='';
+  @Input() style: { [key: string]: string } = {};
 
   constructor(private ngValidationMessagesMaintainService: NgxValidationHandlingMaintainService) { }
 

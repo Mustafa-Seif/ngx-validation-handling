@@ -9,12 +9,14 @@ export class NgxValidationHandlingMaintainService {
     getErrorMessage(controlName: string): string {
         const form = this.ngxValidationHandlingService.getForm();
         const validationMessages = this.ngxValidationHandlingService.getValidationMessages();
+        if (!form || !validationMessages) {
+            return 'Invalid field';
+        }
         const control = form.get(controlName);
-        if (control && control.errors) {
-            const errors: ValidationErrors = control.errors;
-            for (const error in errors) {
-                if (errors.hasOwnProperty(error)) {
-                    return validationMessages[error] || 'Invalid field';
+        if (control && control.errors && control.touched) {
+            for (const errorKey in control.errors) {
+                if (control.errors.hasOwnProperty(errorKey)) {
+                    return validationMessages[errorKey] || 'Invalid field';
                 }
             }
         }

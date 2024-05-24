@@ -9,14 +9,9 @@ export class NgxValidationHandlingService {
   private form!: FormGroup;
   private ValidationMessages!: ValidationMessages;
 
-  setValidationMessages(form: FormGroup, ValidationMessages?: ValidationMessages): void {
+  setValidationHandling(form: FormGroup, ValidationMessages?: ValidationMessages): void {
     this.form = form;
-    this.ValidationMessages = ValidationMessages || {
-      required: 'This field is required',
-      minlength: 'The value is too short',
-      maxlength: 'The value is too long',
-      email: 'Invalid email address',
-    };
+    this.ValidationMessages = ValidationMessages || {};
   }
   getValidationMessages(): ValidationMessages {
     return this.ValidationMessages;
