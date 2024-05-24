@@ -11,18 +11,18 @@
 
 ## Features
 
-- Customizable Validation Messages
-- Dynamic Error Message Retrieval
-- Easy Integration with Reactive Forms
-- Template-Driven Form Support
-- Localization and Internationalization (i18n)
-- Styling and Customization
-- Debounced Error Display
-- Integration with Third-Party Libraries
-- Async Validator Support
-- Configurable Error Display Strategies
-- Custom Validation Error Handlers
-- Form-Wide Error Summary
+- 🛠 Customizable Validation Messages: Tailor the validation messages to suit your application's needs.
+- 🔄 Dynamic Error Message Retrieval: Automatically fetch and display error messages.
+- 📋 Easy Integration with Reactive Forms: Seamlessly integrate with Angular's - - reactive forms.
+- 📝 Template-Driven Form Support: Supports template-driven forms for flexible validation handling.
+- 🌐 Localization and Internationalization (i18n): Easily localize validation messages for different languages.
+- 🎨 Styling and Customization: Style the validation messages to match your application's look and feel.
+- ⏲ Debounced Error Display: Avoid flashing error messages with debounced display.
+- 🔗 Integration with Third-Party Libraries: Compatible with other Angular libraries.
+- ⏳ Async Validator Support: Handle asynchronous validators effectively.
+- ⚙ Configurable Error Display Strategies: Customize how and when error messages are displayed.
+- 🛡 Custom Validation Error Handlers: Define your own handlers for validation       errors.
+- 📝 Form-Wide Error Summary: Provide a summary of errors for the entire form.
 
 
 
@@ -114,3 +114,14 @@ export class AppComponent {
 
 For support or any feedback, email mustafa.webdev7@gmail.com 
 
+
+## Keywords
+
+ - [Angular](https://www.npmjs.com/search?q=Angular)
+ - [Reactive Forms](https://www.npmjs.com/search?q=Reactive&Forms)
+ - [Template-Driven Forms](https://www.npmjs.com/search?q=Template-Driven&Forms)
+ - [Validation](https://www.npmjs.com/search?q=Validation)
+ - [custom Validation Messages](https://www.npmjs.com/search?q=custom&Validation&Messages)
+ - [Form Validation](https://www.npmjs.com/search?q=Form&Validation)
+ - [Form Error Handling](https://www.npmjs.com/search?q=Form&Error&Handling)
+ - [Dynamic Validation](https://www.npmjs.com/search?q=Dynamic&Validation)
