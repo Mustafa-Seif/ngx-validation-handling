@@ -1,5 +1,5 @@
 
-#  Welcome to readme-md-generator👋
+#  Welcome to ngx-validation-handling👋
 ## `ngx-validation-handling is an Angular library that provides customizable, dynamic validation messages for both reactive and template-driven forms.`
 
   
