@@ -1,13 +1,14 @@
 
 #  Welcome to ngx-validation-handling👋
+
 ## `ngx-validation-handling is an Angular library that provides customizable, dynamic validation messages for both reactive and template-driven forms.`
 
   
 
 
-## Demo
+## ✨Demo
 
-✨ See [Demo](https://github.com/Mustafa-Seif) page
+ See [Demo](https://github.com/Mustafa-Seif) page
 
 ## Features
 
@@ -94,8 +95,8 @@ export class AppComponent {
 
 
 
-## 👤 Authors
 
+## 👤 Authors
  [@Mustafa-Seif](https://github.com/Mustafa-Seif)
 
 
@@ -107,7 +108,7 @@ export class AppComponent {
 
 ## 📝License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](https://github.com/Mustafa-Seif/ngx-validation-handling/blob/main/LICENSE)
 
 
 ## 🤝 Support
@@ -115,7 +116,7 @@ export class AppComponent {
 For support or any feedback, email mustafa.webdev7@gmail.com 
 
 
-## Keywords
+## 💡 Keywords
 
  - [Angular](https://www.npmjs.com/search?q=Angular)
  - [Reactive Forms](https://www.npmjs.com/search?q=Reactive&Forms)
