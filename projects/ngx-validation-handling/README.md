@@ -8,7 +8,7 @@
 
 ## ✨Demo
 
- See [Demo](https://github.com/Mustafa-Seif) page
+ See [Demo](https://ngx-validation-handling.netlify.app/) page
 
 ## Features
 
