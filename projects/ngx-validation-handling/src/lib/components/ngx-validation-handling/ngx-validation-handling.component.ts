@@ -17,8 +17,8 @@ import { NgxValidationHandlingMaintainService } from '../../services/ngx-validat
   ],
 })
 export class NgxValidationHandlingComponent {
-  @Input({required:true}) controlName!: string;
-  @Input() fieldName: string='';
+  @Input({ required: true }) controlName!: string;
+  @Input() fieldName: string = '';
   @Input() style: { [key: string]: string } = {};
 
   constructor(private ngValidationMessagesMaintainService: NgxValidationHandlingMaintainService) { }
