@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { NgxValidationHandlingMaintainService } from '../../services/ngx-validation-handling-maintain.service';
+import { ValidationErrorHandler } from '../../interfaces/Validation-error-handler.interface';
 @Component({
   selector: 'ngx-validation-handling',
   template: `
@@ -20,10 +21,11 @@ export class NgxValidationHandlingComponent {
   @Input({ required: true }) controlName!: string;
   @Input() fieldName: string = '';
   @Input() style: { [key: string]: string } = {};
+  @Input() customErrorHandler!: ValidationErrorHandler;
 
   constructor(private ngValidationMessagesMaintainService: NgxValidationHandlingMaintainService) { }
 
   get errorMessage(): string {
-    return this.ngValidationMessagesMaintainService.getErrorMessage(this.controlName);
+    return this.ngValidationMessagesMaintainService.getErrorMessage(this.controlName,this.customErrorHandler);
   }
 }

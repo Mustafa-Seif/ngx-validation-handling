@@ -1,6 +1,6 @@
 {
   "name": "ngx-validation-handling",
-  "version": "1.0.4",
+  "version": "1.0.7",
   "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^16.2.0",

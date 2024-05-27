@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { AbstractControl, FormGroup, NgForm, NgModel, ValidationErrors } from '@angular/forms';
 import { NgxValidationHandlingService } from './ngx-validation-handling.service';
+import { ValidationErrorHandler } from '../interfaces/Validation-error-handler.interface';
 
 @Injectable({
     providedIn: 'root'
 })
 export class NgxValidationHandlingMaintainService {
     constructor(private ngxValidationHandlingService: NgxValidationHandlingService) { }
-    getErrorMessage(controlName: string): string {
+    getErrorMessage(controlName: string,customErrorHandler:ValidationErrorHandler): string {
         const form = this.ngxValidationHandlingService.getForm();
         const validationMessages = this.ngxValidationHandlingService.getValidationMessages();
     
@@ -29,6 +30,9 @@ export class NgxValidationHandlingMaintainService {
                 if (control.errors && control.touched) {
                     for (const errorKey in control.errors) {
                         if (control.errors.hasOwnProperty(errorKey)) {
+                            if (customErrorHandler) {
+                                return customErrorHandler(controlName, errorKey, control.errors[errorKey]);
+                              }
                             return validationMessages[errorKey] || 'Invalid field';
                         }
                     }
@@ -38,6 +42,9 @@ export class NgxValidationHandlingMaintainService {
                 if (control.invalid && (control.dirty || control.touched)) {
                     for (const errorKey in control.errors) {
                         if (control.errors.hasOwnProperty(errorKey)) {
+                            if (customErrorHandler) {
+                                return customErrorHandler(controlName, errorKey, control.errors[errorKey]);
+                              }
                             return validationMessages[errorKey] || 'Invalid field';
                         }
                     }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {NgxValidationHandlingService} from 'ngx-validation-handling';
+import { ValidationErrorHandler } from 'projects/ngx-validation-handling/src/lib/interfaces/Validation-error-handler.interface';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -21,5 +22,17 @@ export class AppComponent {
         maxlength: 'Maximum length should be 10'
       }
     );
+  }
+  customErrorHandler(controlName: string, errorName: string, errorValue: any): string {
+    if (errorName === 'required') {
+      return 'cccc';
+    }
+    if (errorName === 'minlength') {
+      return 'Minimum length should be 3';
+    }
+    if (errorName === 'maxlength') {
+      return 'Maximum length should be 10';
+    }
+    return '';
   }
 }

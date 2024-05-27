@@ -8,7 +8,7 @@
 
 ## ✨Demo
 
- See [Demo](https://ngx-validation-handling.netlify.app/) page
+ See [Demo](https://github.com/Mustafa-Seif) page
 
 ## Features
 
@@ -28,6 +28,7 @@
 
 
 # 🚀Getting started
+## Usage in reactive form 
 ### Step 1: install ngx-validation-handling
 
 ```bash
@@ -82,13 +83,34 @@ export class AppComponent {
 <ngx-validation-handling controlName="fName"></ngx-validation-handling>
 ```
 
+## Usage in template-driven 
+
+```javascript
+ @ViewChild('form') form!:NgForm;
+
+constructor(
+ private ngxValidationHandlingService:NgxValidationHandlingService
+ ){}
+
+ ngAfterViewInit(): void {
+    this.ngxValidationHandlingService.setValidationHandling(this.form,
+      {
+        required: 'This field is required',
+        minlength: 'Minimum length should be 3',
+        maxlength: 'Maximum length should be 10'
+      }
+    );
+ }
+
+```
+
 
 ## API Reference
 
 | Input | Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `controlName` | `string` | **Required**. Takes your input formControlName |
-| `customErrorHandler` | `ValidationErrorHandler` |  To add custom validation error handlers |
+| `customErrorHandler` | `ValidationErrorHandler` | Function that used add custom validation error handlers |
 | `fieldName` | `string` |  The name of your field |
 | `style` | `{}` |  Add your custom styles |
 
