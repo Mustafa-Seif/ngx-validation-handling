@@ -1,4 +1,4 @@
-
+<!-- 
 <div class="w-50 m-auto mt-5">
 <form [formGroup]="form">
   <div class="form-group mb-2">
@@ -11,4 +11,47 @@
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+</div> -->
+
+
+
+
+
+<div class="w-50 m-auto mt-5">
+  <form #form="ngForm" (ngSubmit)="submit(form)">
+    <div class="form-group mb-2">
+      <ngx-validation-handling controlName="fName" [style]="{color:'black'}"></ngx-validation-handling>
+      <input
+        name="fName"
+        ngModel
+        required
+        minlength="3"
+        maxlength="10"
+        email
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        placeholder="Enter email">
+ 
+    </div>
+    <div class="form-group mb-2">
+      <ngx-validation-handling controlName="lName" [customErrorHandler]="customErrorHandler" ></ngx-validation-handling>
+      
+      
+     
+      <input
+        name="lName"
+        ngModel
+        required
+        minlength="3"
+        maxlength="10"
+        type="password"
+        class="form-control"
+        id="exampleInputPassword1"
+        placeholder="Password">
+
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 </div>

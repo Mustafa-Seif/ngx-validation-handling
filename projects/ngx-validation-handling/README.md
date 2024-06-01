@@ -28,11 +28,18 @@
 
 
 # 🚀Getting started
+## Usage with reactive form 
 ### Step 1: install ngx-validation-handling
 
+#### NPM
 ```bash
  npm i ngx-validation-handling --save
 ```
+#### YARN
+```bash
+ yarn add ngx-validation-handling 
+```
+
 
 
 ### Step 2: Import the "NgxValidationHandlingModule"
@@ -63,7 +70,7 @@ export class AppComponent {
 }
 ```
 
-### Step 4: Use NgxValidationHandlingService to send your form and your validation messsages example:
+### Step 4: Use "NgxValidationHandlingService" to send your form and your validation messsages example:
 ```javascript
   ngOnInit(): void {
     // After intit your form
@@ -77,21 +84,78 @@ export class AppComponent {
   }
   ```
   
- ### Step 5: In template use ngx-validation-handling component and send your from control name
+ ### Step 5: In template use "ngx-validation-handling" component and send your from control name
   ```javascript
 <ngx-validation-handling controlName="fName"></ngx-validation-handling>
 ```
 
+## Usage with template-driven from
+
+```javascript
+import { Component } from '@angular/core';
+import {NgxValidationHandlingService} from 'ngx-validation-handling';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
+@ViewChild('form') form!:NgForm;
+
+constructor(
+ private ngxValidationHandlingService:NgxValidationHandlingService
+ ){}
+
+ ngAfterViewInit(): void {
+    this.ngxValidationHandlingService.setValidationHandling(this.form,
+      {
+        required: 'This field is required',
+        minlength: 'Minimum length should be 3',
+        maxlength: 'Maximum length should be 10'
+      }
+    );
+
+```
+ ### In your template use "ngx-validation-handling" component and send your from control name
+  ```javascript
+<ngx-validation-handling controlName="fName"></ngx-validation-handling>
+```
 
 ## API Reference
-
+### @Inputs
 | Input | Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `controlName` | `string` | **Required**. Takes your input formControlName |
-| `customErrorHandler` | `ValidationErrorHandler` |  To add custom validation error handlers |
 | `fieldName` | `string` |  The name of your field |
+| `className` | `string` |  Add your custom className |
 | `style` | `{}` |  Add your custom styles |
 
+### @Methods
+| Input | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `customErrorHandler` | `ValidationErrorHandler` | Method used adds customized  validation error handlers |
+
+### Example, how you can use "customErrorHandler"
+#### in your component
+```javascript
+   customErrorHandler(controlName: string, errorName: string, errorValue: any): string {
+    if (errorName === 'required') {
+      return 'Custom required message';
+    }
+    if (errorName === 'minlength') {
+      return 'Custom minimum length message';
+    }
+    if (errorName === 'maxlength') {
+      return 'Custom maximum length message';
+    }
+    return '';
+  }
+  ```
+  #### in your template
+```javascript
+  <ngx-validation-handling controlName="lName" [customErrorHandler]="customErrorHandler" ></ngx-validation-handling>
+```
 
 
 
@@ -114,15 +178,3 @@ export class AppComponent {
 ## 🤝 Support
 
 For support or any feedback, email mustafa.webdev7@gmail.com 
-
-
-## 💡 Keywords
-
- - [Angular](https://www.npmjs.com/search?q=Angular)
- - [Reactive Forms](https://www.npmjs.com/search?q=Reactive&Forms)
- - [Template-Driven Forms](https://www.npmjs.com/search?q=Template-Driven&Forms)
- - [Validation](https://www.npmjs.com/search?q=Validation)
- - [custom Validation Messages](https://www.npmjs.com/search?q=custom&Validation&Messages)
- - [Form Validation](https://www.npmjs.com/search?q=Form&Validation)
- - [Form Error Handling](https://www.npmjs.com/search?q=Form&Error&Handling)
- - [Dynamic Validation](https://www.npmjs.com/search?q=Dynamic&Validation)
