@@ -25,7 +25,13 @@
 - 🛡 Custom Validation Error Handlers: Define your own handlers for validation       errors.
 - 📝 Form-Wide Error Summary: Provide a summary of errors for the entire form.
 
+## Versions
+| Angular | ngx-validation-handling |
+| :-------- | :-------------------- | 
+| `17.0.0` | `v3.x` |
+| `16.0.0` | `v2.x & v1.x` |
 
+##
 
 # 🚀Getting started
 ## Usage with reactive form 
