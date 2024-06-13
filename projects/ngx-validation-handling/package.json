@@ -1,10 +1,9 @@
 
 {
   "name": "ngx-validation-handling",
-  "version": "2.0.3",
-  "description": "ngx-validation-handling is an Angular package that provides customizable, dynamic validation messages for both reactive and template-driven forms.",
-  "author": "Mustafa Seif El-Nasr (mustafa.webdev7@gmail.com)",
+  "version": "2.0.7",
   "license": "MIT",
+  "description": "ngx-validation-handling is an Angular library that provides customizable, dynamic validation messages for both reactive and template-driven forms.",
   "keywords": [
     "Angular",
     "Reactive Forms",
@@ -15,11 +14,6 @@
     "Form Error Handling",
     "Dynamic Validation"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Mustafa-Seif/ngx-validation-handling?tab=MIT-1-ov-file"
-  },
-  "homepage": "https://github.com/Mustafa-Seif/ngx-validation-handling?tab=MIT-1-ov-file",
   "peerDependencies": {
     "@angular/common": "^16.2.0",
     "@angular/core": "^16.2.0"
