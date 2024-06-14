@@ -3,6 +3,106 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "ngx-validation-handling-v18": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/ngx-validation-handling-v18",
+            "index": "src/index.html",
+            "browser": "src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": [
+              "src/styles.scss"
+            ],
+            "scripts": [],
+            "server": "src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "server.ts"
+            }
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kB",
+                  "maximumError": "4kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "ngx-validation-handling-v18:build:production"
+            },
+            "development": {
+              "buildTarget": "ngx-validation-handling-v18:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": [
+              "src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
     "ngx-validation-handling": {
       "projectType": "library",
       "root": "projects/ngx-validation-handling",
@@ -48,49 +148,52 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/demo-app",
             "index": "projects/demo-app/src/index.html",
-            "main": "projects/demo-app/src/main.ts",
+            "browser": "projects/demo-app/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
             "tsConfig": "projects/demo-app/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/demo-app/src/favicon.ico",
-              "projects/demo-app/src/assets"
+              {
+                "glob": "**/*",
+                "input": "projects/demo-app/public"
+              }
             ],
             "styles": [
-              "projects/demo-app/src/styles.scss",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "projects/demo-app/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "server": "projects/demo-app/src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "projects/demo-app/server.ts"
+            }
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "2kB",
+                  "maximumError": "4kB"
                 }
               ],
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "production"
@@ -99,19 +202,16 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "demo-app:build:production"
+              "buildTarget": "demo-app:build:production"
             },
             "development": {
-              "browserTarget": "demo-app:build:development"
+              "buildTarget": "demo-app:build:development"
             }
           },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "demo-app:build"
-          }
+          "builder": "@angular-devkit/build-angular:extract-i18n"
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
@@ -123,17 +223,21 @@
             "tsConfig": "projects/demo-app/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/demo-app/src/favicon.ico",
-              "projects/demo-app/src/assets"
+              {
+                "glob": "**/*",
+                "input": "projects/demo-app/public"
+              }
             ],
             "styles": [
-              "projects/demo-app/src/styles.scss",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "projects/demo-app/src/styles.scss"
             ],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "b35f9029-15e7-4ba9-9d66-9e3a45ac3bcb"
   }
 }
