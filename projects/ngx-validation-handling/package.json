@@ -1,6 +1,6 @@
 {
   "name": "ngx-validation-handling",
-  "version": "4.0.0",
+  "version": "4.0.3",
   "license": "MIT",
   "description": "ngx-validation-handling is an Angular library that provides customizable, dynamic validation messages for both reactive and template-driven forms.",
   "keywords": [

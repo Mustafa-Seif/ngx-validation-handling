@@ -15,10 +15,10 @@ class NgxValidationHandlingService {
     getForm() {
         return this.form;
     }
-    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.0.3", ngImport: i0, type: NgxValidationHandlingService, deps: [], target: i0.ɵɵFactoryTarget.Injectable }); }
-    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.0.3", ngImport: i0, type: NgxValidationHandlingService, providedIn: 'root' }); }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.3.11", ngImport: i0, type: NgxValidationHandlingService, deps: [], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "17.3.11", ngImport: i0, type: NgxValidationHandlingService, providedIn: 'root' }); }
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.0.3", ngImport: i0, type: NgxValidationHandlingService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.3.11", ngImport: i0, type: NgxValidationHandlingService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -72,10 +72,10 @@ class NgxValidationHandlingMaintainService {
         }
         return '';
     }
-    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.0.3", ngImport: i0, type: NgxValidationHandlingMaintainService, deps: [{ token: NgxValidationHandlingService }], target: i0.ɵɵFactoryTarget.Injectable }); }
-    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.0.3", ngImport: i0, type: NgxValidationHandlingMaintainService, providedIn: 'root' }); }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.3.11", ngImport: i0, type: NgxValidationHandlingMaintainService, deps: [{ token: NgxValidationHandlingService }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "17.3.11", ngImport: i0, type: NgxValidationHandlingMaintainService, providedIn: 'root' }); }
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.0.3", ngImport: i0, type: NgxValidationHandlingMaintainService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.3.11", ngImport: i0, type: NgxValidationHandlingMaintainService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
@@ -91,14 +91,14 @@ class NgxValidationHandlingComponent {
     get errorMessage() {
         return this.ngValidationMessagesMaintainService.getErrorMessage(this.controlName, this.customErrorHandler);
     }
-    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.0.3", ngImport: i0, type: NgxValidationHandlingComponent, deps: [{ token: NgxValidationHandlingMaintainService }], target: i0.ɵɵFactoryTarget.Component }); }
-    static { this.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "18.0.3", type: NgxValidationHandlingComponent, selector: "ngx-validation-handling", inputs: { controlName: "controlName", fieldName: "fieldName", style: "style", customErrorHandler: "customErrorHandler" }, ngImport: i0, template: `
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.3.11", ngImport: i0, type: NgxValidationHandlingComponent, deps: [{ token: NgxValidationHandlingMaintainService }], target: i0.ɵɵFactoryTarget.Component }); }
+    static { this.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "17.3.11", type: NgxValidationHandlingComponent, selector: "ngx-validation-handling", inputs: { controlName: "controlName", fieldName: "fieldName", style: "style", customErrorHandler: "customErrorHandler" }, ngImport: i0, template: `
     <ng-container *ngIf="controlName">
       <label [ngStyle]="style"  *ngIf="errorMessage !== ''" class="error-message">{{ fieldName?fieldName+' '+errorMessage: errorMessage }}</label>
     </ng-container>
   `, isInline: true, styles: [".error-message{color:red;font-size:12px}\n"], dependencies: [{ kind: "directive", type: i2.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }, { kind: "directive", type: i2.NgStyle, selector: "[ngStyle]", inputs: ["ngStyle"] }] }); }
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.0.3", ngImport: i0, type: NgxValidationHandlingComponent, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.3.11", ngImport: i0, type: NgxValidationHandlingComponent, decorators: [{
             type: Component,
             args: [{ selector: 'ngx-validation-handling', template: `
     <ng-container *ngIf="controlName">
@@ -117,11 +117,11 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.0.3", ngImpor
             }] } });
 
 class NgxValidationHandlingModule {
-    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.0.3", ngImport: i0, type: NgxValidationHandlingModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule }); }
-    static { this.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version: "18.0.3", ngImport: i0, type: NgxValidationHandlingModule, declarations: [NgxValidationHandlingComponent], imports: [CommonModule], exports: [NgxValidationHandlingComponent] }); }
-    static { this.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "18.0.3", ngImport: i0, type: NgxValidationHandlingModule, imports: [CommonModule] }); }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.3.11", ngImport: i0, type: NgxValidationHandlingModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule }); }
+    static { this.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version: "17.3.11", ngImport: i0, type: NgxValidationHandlingModule, declarations: [NgxValidationHandlingComponent], imports: [CommonModule], exports: [NgxValidationHandlingComponent] }); }
+    static { this.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "17.3.11", ngImport: i0, type: NgxValidationHandlingModule, imports: [CommonModule] }); }
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.0.3", ngImport: i0, type: NgxValidationHandlingModule, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.3.11", ngImport: i0, type: NgxValidationHandlingModule, decorators: [{
             type: NgModule,
             args: [{
                     declarations: [
