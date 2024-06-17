@@ -8,7 +8,7 @@
 
 ## ✨Demo
 
- See [Demo](https://ngx-validation-handling.netlify.app/) page
+ See [Demo](https://stackblitz.com/edit/stackblitz-starters-matnzf?description=An%20angular-cli%20project%20based%20on%20@angular/animations,%20@angular/common,%20@angular/compiler,%20@angular/core,%20@angular/forms,%20@angular/platform-browser,%20@angular/platform-browser-dynamic,%20@angular/router,%20core-js,%20rxjs,%20tslib%20and%20zone.js&file=src%2Fmain.ts&template=node&title=Angular%20Starter) page
 
 ## Features
 
@@ -141,7 +141,7 @@ constructor(
 ### @Methods
 | Input | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `customErrorHandler` | `ValidationErrorHandler` | Method used adds customized  validation error handlers |
+| `customErrorHandler` | `ValidationErrorHandler` | Method to add more customized validation errors in your control |
 
 ### Example, how you can use "customErrorHandler"
 #### in your component
